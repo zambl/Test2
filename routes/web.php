@@ -27,7 +27,7 @@ Route::get('/AddMenus', function () {
     return view('AddMenus');
 });
 Auth::routes();
-Route::get('/create/pays',[Payscontroller::class,'create']);
+Route::get('/create/pays',[Payscontroller::class,'create'])->name('create.Pays');
 Route::post('/store/pays',[Payscontroller::class,'store'])->name('store.pays');
 Route::get('Pays.index', 'Payscontroller@index')->name('Pays.index');
 Route::get('Edit/Pays/{id}','Payscontroller@Edit')->name('Pays.Edit');
@@ -63,5 +63,8 @@ Route::get('Recettes.index', 'RecettesController@index')->name('Recettes.index')
 Route::get('Edit/Recettes/{id}','RecettesController@Edit')->name('Recettes.Edit');
 Route::PUT('Modifier/Recettes/{id}','RecettesController@update')->name('Modifier.Recettes');
 Route::get('delete/Recettes/{id}','RecettesController@destroy')->name('Delete.Recettes');
+Route::resource('category','CategoryController')->name('*' ,'category');
+Route::PUT('Modifier/category/{id}','CategoryController@update')->name('Modifier.category');
+Route::get('delete/category/{id}','CategoryController@destroy')->name('Delete.category');
 
 

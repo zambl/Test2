@@ -27,30 +27,11 @@ class PhotoController extends Controller
        $photo->save();
        return redirect()->route('photo.create');  
     }
-    public function show($id)
-{     $photo= Photo:: find ($id);
-    return view ('Photo',compact('Photo'));
-   
-}
-public function index()
+    public function index()
     {
         $photos = Photo::all();
         return view('Photo.index',compact('photos'));
     }
-    public function update(Request $request, $id )
-    {
-      $photos = Photos::find($id);
-      $photos->nom=$request->nom;
-      $photos->save();
-      return redirect()->route('Photo.index');  
- 
-    }
-    public function destroy($id)
-    {
-        $photos = Photos::find($id);
-        $photos->delete();
-        return redirect()->route('Photos.index'); 
- 
-    }
+   
  }
  

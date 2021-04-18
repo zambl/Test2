@@ -12,11 +12,12 @@ class RecettesController extends Controller
     public function create()
     {      
         $menus=Menus::all();
-        return view('Recettes.create',compact('menus'));
+        return view('create.recettes',compact('menus'));
     }
     public function index()
     {
-        //
+        $recettes = recettes::all();
+        return view('recettes.index',compact('recettes'));
     }
     
     public function store(Request $request)

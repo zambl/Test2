@@ -1,65 +1,102 @@
 @extends('layouts.master')
-@section('css')
-    <link href="{{ asset('js/advanced-datatable/css/demo_page.css') }}" rel="stylesheet" />
-    <link href="{{ asset('js/advanced-datatable/css/demo_table.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('js/data-tables/DT_bootstrap.css') }}" />
-@endsection
+
 
 @section('contenu')
 
+<header>
+  <a class="btn btn-success"  href="{{ route('Photo.create') }}">Ajouter</button></a></button>  
+</header>
+
 <div class="container">
-    <p class="w-25 bg-info mt-2 p-2"></p>
 
-<div class="row">
-    <div class="col-sm-12">
-        <section class="panel">
-            <header class="panel-heading">
-                <a class="btn btn-success"  href="http://127.0.0.1:8000/create/Photo">Ajouter</button></a></button>  
-            </header>
-            <div class="panel-body">
-                <div class="adv-table">
-                    <table  class="display table table-bordered table-striped" id="dynamic-table">
-                        <thead>
-                            <tr>
-                                <th>menus_id</th>
-                                <th>photo</th>
-                                <th>Options</th>
-                            </tr>
-                               
-                        </thead>
-                        <tbody>
-                            @foreach ($photos as $photo)
-                            <tr>
-                               
-                                <td>{{$photo['menus_id']}}</td>
-                                <td>
-                                <div style="background-image: url({{ asset('\uploads\photos\''.$photo->image)}});background-repeat:no-repeat;background-position:center">
+  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Gallery Menus</h1>
 
-                                </div>
-                                </td>
-                                <td>
-                                    <a href="{{route('Delete.Photo',$photo['id'])}}"> <button class="btn btn-danger"> Delete </button></a>
-                                    <a href="{{route('Photo.Edit',$photo['id'])}}"> <button type="button" class="btn btn-primary">Edit</button></a></button>
-                                   
-                                  </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+  <hr class="mt-2 mb-5">
+
+  <div class="row text-center text-lg-left">
+
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\hKnvYyVAnilGFDBedBa3HfDGVz7nkeGa0uGMUp1T.jpg')}}" alt="">
+          </a>
     </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\Plat.jpg')}}" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\Harira.jpg')}}" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\Garba.jpg')}}" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\5R3s2l7HXo36muOitG3SdRNMC6mM1C7EEqyUJrpF.jpg')}}" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\unique.jpg')}}" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\HLA8XNOlVtCVjpWbHABkWmxg4DBpU1FdHeCQm8FC.jpg')}}" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\unique.jpg')}}" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\unique.jpg')}}" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\unique.jpg')}}"alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ asset('uploads\photos\unique.jpg')}}" alt="">
+          </a>
+    </div>
+ 
+  </div>
+
 </div>
-@endsection
+<!-- /.container -->
 
-@section('js')
-    <!--dynamic table-->
-<script type="text/javascript" language="javascript" src="{{ asset('js/advanced-datatable/js/jquery.dataTables.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/data-tables/DT_bootstrap.js')}}"></script>
-<!--common script init for all pages-->
-<script src="{{ asset('js/scripts.js')}}"></script>
 
-<!--dynamic table initialization -->
-<script src="{{ asset('js/dynamic_table_init.js')}}"></script>
+    <script type="text/javascript">//<![CDATA[
+
+
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "m0egb54s"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
 @endsection

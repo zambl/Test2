@@ -14,31 +14,28 @@
     <div class="col-sm-12">
         <section class="panel">
             <header class="panel-heading">
-                <a class="btn btn-success"  href="{{ route('create.Pays') }}">Ajouter</button></a></button>  
+                <a class="btn btn-success"  href="{{ route('category.create') }}">Ajouter</button></a></button>  
             </header>
             <div class="panel-body">
                 <div class="adv-table">
                     <table  class="display table table-bordered table-striped" id="dynamic-table">
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Nom</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pays as $pay)
-                            <tr>
-                                <td>{{$pay['id']}}</td>
-                                <td>{{$pay['nom']}}</td>
-                               <td>
-                                 <a href="{{route('Delete.Pays',$pay['id'])}}"> <button class="btn btn-danger"> Delete </button></a>
-                                 <a href="{{route('Pays.Edit',$pay['id'])}}"> <button type="button" class="btn btn-primary">Edit</button></a></button>
-                                
-                               </td>
-                              
-                            </tr>
-                            @endforeach
+                           @foreach ($categories as $category)
+                               <tr>
+                                   <td>{{  $category->name }}</td>
+                                   <td>
+                                    <a href="{{route('Delete.category',$category['id'])}}"> <button class="btn btn-danger"> Delete </button></a>
+                                    <a href="{{route('Modifier.category',$category['id'])}}"><button type="button" class="btn btn-primary">Edit</button></a></button>
+                                     
+                                   </td>
+                               </tr>
+                           @endforeach
                         </tbody>
                     </table>
                 </div>

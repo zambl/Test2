@@ -1,6 +1,7 @@
 @extends ( 'Layouts/master' )
 @section('contenu')
-
+<div class="box box-info">
+  <div class="box-header with-border">
 <section class="panel">
   <div class="panel-body">
       <div class="">

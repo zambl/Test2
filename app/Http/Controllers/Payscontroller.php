@@ -26,13 +26,9 @@ class Payscontroller extends Controller
         $pays = Pays::all();
         return view('Pays.index',compact('pays'));
     } 
-   public function ListePays()
+   
+   public function Edit($id)
    {
-       $pays=Pays::all();
-       return view('VuePays',compact('pays'));
-
-   }
-   public function Edit($id){
        $pays= Pays::find($id);
        return view ('Pays.Edit',['pays'=> $pays]);
 

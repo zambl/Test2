@@ -12,7 +12,7 @@
         <section class="panel">
             <header class="panel-heading">
                
-                <a class="btn btn-success"  href="http://127.0.0.1:8000/create/Menus">Ajouter</button></a></button>  
+                <a class="btn btn-success"  href="{{ route('Menus.create') }}">Ajouter</button></a></button>  
             </header>
             <div class="panel-body">
                 <div class="adv-table">
